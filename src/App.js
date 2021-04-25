@@ -1,13 +1,14 @@
 import './App.css';
+import Uploader from './components/Uploader';
 
 function App() {
   return (
     <div className="app">
       <div className="app__container">
-        <h1>the</h1>
+        <Uploader />
 
 
-        <p className="app__footer">created by <span>MisterPerfect007</span> - devChallenges.io</p>
+        <p className="app__footer">created by <a href="https://devchallenges.io/portfolio/MisterPerfect007" target="_blank">MisterPerfect007</a> - devChallenges.io</p>
       </div>
     </div>
   );
