@@ -1,11 +1,13 @@
 import React from 'react';
 import '../css/Uploader.css';
 import PickFile from './PickFile';
+import Uploading from './Uploading';
 
 function Uploader() {
     return (
         <div className="uploader">
-            <PickFile />
+            <Uploading />
+            {/* <PickFile /> */}
         </div>
     )
 }
