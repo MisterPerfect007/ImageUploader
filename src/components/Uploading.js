@@ -6,7 +6,9 @@ function Uploading() {
         <div className="uploading">
             <h1 className="uploading__title big-title">Uploading....</h1>
             <div className="uploading__bar">
-                <div className="uploading__bar-moving"></div>
+                <div className="uploading__bar-wrapper">
+                    <div className="uploading__bar-moving"></div>
+                </div>
             </div>
         </div>
     )
