@@ -32,6 +32,15 @@
   /* border-width: 3px; */
   border-radius: var(--border-radius);
 }
+.pickFile__dragArea--active {
+  border: none;
+}
+.pickFile__droppedFile {
+  border-radius: var(--border-radius);
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
 .pickFile__dragArea-text {
   font-weight: 500;
   font-size: 12px;

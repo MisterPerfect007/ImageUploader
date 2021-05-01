@@ -7,9 +7,9 @@ import Uploading from './Uploading';
 function Uploader() {
     return (
         <div className="uploader">
-            <UploadComplete />
+            {/* <UploadComplete /> */}
             {/* <Uploading /> */}
-            {/* <PickFile /> */}
+            <PickFile />
         </div>
     )
 }
