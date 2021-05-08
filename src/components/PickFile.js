@@ -1,11 +1,13 @@
 import React, { useRef, useState } from 'react';
 import dragAreaImage from '../image/image.svg';
 import '../css/PickFile.css';
+import { storage } from '../firebase';
 
 
-function PickFile() {
+function PickFile({ setUploaderStep, setFileDownloadURL }) {
 
     const [fileURL, setFileURL] = useState(false);
+    const [fileToUpload, setFileToUpload] = useState(undefined);
     //Input ref
     const chooseFileRef = useRef(null);
 
@@ -30,6 +32,27 @@ function PickFile() {
         setFileURL(false)
         console.log("delete file");
     }
+    function onUpload() {
+        if(!fileToUpload) alert("No file to upload !")
+        else {
+            setUploaderStep('uploading');
+            const uploadTask = storage.ref(`images/${fileToUpload.name}`).put(fileToUpload);
+            uploadTask.on('state_changed', 
+            (snapshot) => {
+                
+
+            }, 
+            (error) => {
+                console.log(error);
+            }, 
+            () => {
+                uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
+                    setFileDownloadURL(downloadURL);
+                    setUploaderStep('complete');
+                })        
+            })
+        }
+    }
     
     //To read the selected
     const readFile = (file) => {
@@ -42,6 +65,7 @@ function PickFile() {
         fileReader.onload = () => {
             let url = fileReader.result;
             setFileURL(url);
+            setFileToUpload(file);
         }
         try {
             fileReader.readAsDataURL(file);
@@ -72,6 +96,7 @@ function PickFile() {
                 <>
                     <button
                         className="pickFile__btn upload-btn"
+                        onClick={onUpload}
                     > Upload !</button>
                     <button 
                         className="pickFile__btn-delete"
