@@ -8,7 +8,7 @@ function App() {
         <Uploader />
 
 
-        <p className="app__footer">created by <a href="https://devchallenges.io/portfolio/MisterPerfect007" target="_blank">MisterPerfect007</a> - devChallenges.io</p>
+        <p className="app__footer">created by <a href="https://devchallenges.io/portfolio/MisterPerfect007" target="_blank" rel="noopener noreferrer">MisterPerfect007</a> - devChallenges.io</p>
       </div>
     </div>
   );
