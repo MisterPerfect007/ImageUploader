@@ -5,7 +5,7 @@
   flex-direction: column;
   background-color: #fff;
   padding: 20px 30px;
-  max-width: 380px;
+  max-width: 400px;
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
 }
@@ -18,8 +18,9 @@
 }
 .uploadComplete__image {
   border-radius: var(--border-radius);
-  /* max-height: 400px; */
-  width: 100%;
+  max-height: 350px;
+  border: 1px solid rgb(212, 212, 212);
+  max-width: 350px;
   min-width: 100px;
   margin-bottom: 20px;
   object-fit: contain;

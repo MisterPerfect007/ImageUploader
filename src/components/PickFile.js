@@ -32,6 +32,7 @@ function PickFile({ setUploaderStep, setFileDownloadURL }) {
         setFileURL(false)
         console.log("delete file");
     }
+    //To upload file
     function onUpload() {
         if(!fileToUpload) alert("No file to upload !")
         else {
